@@ -1,213 +1,313 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>애니 매니아 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공덕 마사지 링크 & 스웨디시 가성비 추천 - 마포 힐링 가이드</title>
+    <meta name="description" content="공덕 마사지 링크 총집합! 공덕역 주변 타이, 아로마, 스웨디시 마사지의 실시간 가격 비교와 1등급 힐러 매니저 추천 가이드를 전해드립니다.">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: hsl(280, 100%, 65%);
+            --secondary: hsl(310, 100%, 60%);
+            --dark: hsl(290, 25%, 7%);
+            --card-bg: hsl(290, 25%, 13%);
+            --text: hsl(0, 0%, 93%);
+            --text-muted: hsl(290, 10%, 68%);
+            --border: hsl(280, 40%, 18%);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: var(--dark);
+            color: var(--text);
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            padding-bottom: 60px;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark), var(--card-bg));
+            border-bottom: 2px solid var(--border);
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .hero {
+            background: radial-gradient(circle at center, hsl(280, 40%, 12%), var(--dark));
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+        }
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(200, 50, 250, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(200, 50, 250, 0.5);
+        }
+        .main-content {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .intro-section {
+            margin-bottom: 50px;
+        }
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+        .intro-section p {
+            margin-bottom: 20px;
+            color: var(--text-muted);
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text);
+        }
+        .card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .reviews-section {
+            margin: 60px 0;
+            background: linear-gradient(135deg, var(--card-bg), var(--dark));
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+        }
+        .reviews-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .review-card {
+            background-color: var(--dark);
+            border-left: 4px solid var(--secondary);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 12px 12px 0;
+        }
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .review-author {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+        .info-bar {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            padding: 20px;
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            border-radius: 12px;
+            margin: 50px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .info-bar a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #0d0412;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 10px;
+        }
+        footer strong {
+            color: var(--text);
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+        }
+    </style>
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "공덕 마사지 정보 센터",
+      "description": "공덕역 주변 타이, 아로마, 스웨디시 마사지 최신 제휴 정보 및 실시간 최저가 매칭.",
+      "telephone": "010-6279-0862",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "마포구 공덕역",
+        "addressCountry": "KR"
+      },
+      "priceRange": "$$"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>애니 매니아 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>애니 매니아</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>90년대 셀 애니메이션 작화의 한계와 이와 관련된 아날로그 특수 효과의 역사</h3>
-          <p>90년대 셀 애니메이션 제작 시 빛이 뿌옇게 흐려지거나 번지는 몽환적인 효과를 내기 위해 투명 셀판 아래에 부드러운 백라이트를 대고 조리개를 조절해 이중 노출로 촬영하던 촬영 스튜...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>판타지 애니 설정 속 북유럽 세계수(Yggdrasil) 전승의 변형 패턴 고찰</h3>
-          <p>수많은 이세계 판타지 만화와 애니메이션에서 세계관의 핵심 축으로 등장하는 세계수 위그드라실 전승은 현대 서브컬처에 이르러 단순한 물리적 나무가 아닌 가상 데이터 그리드나 다차원 통...</p>
-        </a>
-      
+<header>
+    <div class="header-container">
+        <div class="logo">Gongdeok Orchid</div>
+        <nav>
+            <a href="index.html">홈</a>
+            <a href="about.html">소개</a>
+        </nav>
+    </div>
+</header>
 
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>전설적인 애니메이터들의 타이밍 미학: 리미티드 3코마 작화법의 운동학</h3>
-          <p>디즈니의 풀 애니메이션(초당 24장)에 대비되는 동양 리미티드 애니메이션의 정수인 3코마 작화법(초당 8장 기법)은 프레임의 부족함을 독창적인 프레임 홀드 타이밍과 과장된 정지 컷...</p>
-        </a>
-      
+<section class="hero">
+    <h1>공덕 마사지 추천 <span>내돈내산 피로 종결</span></h1>
+    <p>삐끼 광고와 허위 매니저 정보에 지친 마포 직장인 형들을 위해 준비한 공덕역 스웨디시/타이 마사지 투명 예약 솔루션.</p>
+    <a href="tel:010-6279-0862" class="cta-btn">공덕 마사지 실시간 매칭: 010-6279-0862</a>
+</section>
 
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 강남 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+<div class="main-content">
+    <section class="intro-section">
+        <h2>공덕역 밤거리에서 가성비와 힐러 수준 동시에 잡는 법</h2>
+        <p>반갑다 마포 로컬 브로들! 공덕역이나 도화동 일대에서 열심히 일하고 뭉친 피로 풀러 마사지 샵 찾을 때, 생각보다 비싼 가격에 멈칫하거나 정보가 너무 투박해서 실망했던 적 많았지? 인터넷 검색해보면 죄다 정형화된 업체 측 광고 배너 뿐이라, 실제로 관리사가 꼼꼼하게 누르는지, 샵 내부가 위생적인지 가늠이 전혀 안 되기 일쑤야. 그런 형들의 피로와 지갑을 안전하게 지키기 위해 이 큰형이 팔 걷어붙였다.</p>
+        <p>공덕은 오피스 밀집 지역이라 매니저들의 마인드와 실력 관리가 정말 칼같이 엄격해. 조금이라도 대충 눌렀다간 까다로운 직장인 형들의 평점 폭격을 맞고 사장들이 살아남지 못하지. 그렇기에 지금 잘 나가는 제휴 매장들은 검증된 에이스 힐러들만 살아남은 알짜배기 구역이야. 불필요한 거품 가격 싹 다 빼고 정직한 정찰제로 힐링하고 싶다면 우리 채널만 딱 잡고 가면 된다.</p>
+    </section>
 
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>애니 작화 마니아들이 강력히 추천하는 강남 셔츠룸 스페셜 아카이브</h3>
-          <p>깊이 있는 셀 애니메이션 작화의 연출 철학과 세계수의 역사적 서사 설정을 분석하며 지적인 마니아적 안목을 키워가다 보면, 지친 정신에 활기를 불어넣고 쾌적한 오프라인 라이프 쉼터를...</p>
-        </a>
-      
+    <div class="info-bar">
+        🔥 공덕역 마사지 실시간 할인 견적 & 스피드 예약: <a href="tel:010-6279-0862">010-6279-0862</a>
+    </div>
+
+    <section class="intro-section">
+        <h2>공덕 마사지 대표적인 장르별 코스 가이드</h2>
+        <p>몸의 뻐근함 상태나 그날의 기분에 맞춰서 코스를 현명하게 선택해야 확실하게 몸이 깃털처럼 가벼워져. 아래 3종 매뉴얼 확인해봐.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>1. 전통 타이/아로마 코스</h3>
+                <p>뼈마디가 아플 정도로 몸이 단단히 굳었거나 전통 아로마 오일로 온몸을 매끄럽고 릴렉스하게 꾹꾹 풀어주고 싶을 때 정답. 가성비 또한 가장 훌륭함.</p>
+            </div>
+            <div class="card">
+                <h3>2. 프리미엄 스웨디시 코스</h3>
+                <p>감성적이고 부드러운 터치와 특수 림프 순환 케어를 통해 정신적인 스트레스까지 눈 녹듯 사라지게 해주는 최고급 힐링 장르. 매니저들 수질 또한 에이스급임.</p>
+            </div>
+            <div class="card">
+                <h3>3. 회식/모임 연계 2차 룸 가이드</h3>
+                <p>동료들과 거하게 취하고 나서 사우나 하고 편하게 누워 자면서 마사지까지 한 방에 풀코스로 해결하고 싶을 때 강추하는 연계형 VIP 룸 가이드.</p>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+    </section>
+
+    <section class="reviews-section">
+        <h2>공덕 직장인 브로들의 찐득한 별점 후기</h2>
+        
+        <div class="review-card">
+            <p>"도화동에서 야근하고 뻐근해서 전화 드렸는데, 진짜 손맛 장난 아닌 힐러분으로 매칭해주셔서 지옥 같던 어깨 통증 싹 날아갔습니다. 가격도 정찰제로 너무 투명해서 단골 찜했어요."</p>
+            <div class="review-author">- 마포 IT기획 박대리 (31세)</div>
+        </div>
+
+        <div class="review-card">
+            <p>"스웨디시 마사지 처음 받아봤는데 일반 타이랑은 비교가 안 되게 황홀하네요. 예약 조율을 너무 친절하게 해주셔서 매주 금요일 퇴근길 도장 깨기 갈 생각입니다."</p>
+            <div class="review-author">- 공덕 주민 최형님 (34세)</div>
+        </div>
+    </section>
+
+    <section class="intro-section">
+        <h2>공덕 마사지 실패 안 하는 3계명</h2>
+        <p>첫째, 대로변이나 뒷골목에서 찌라시 돌리면서 들어오라는 불법 호객 매장들은 백프로 불친절하고 요금 추가 장난치는 곳이다. 둘째, 가기 전에 무조건 전화를 넣어 현재 대기 시간과 에이스 힐러 출근 상황을 선 확인해라. 셋째, 확실하게 신용 보증된 로컬 제휴 실장 직통선(010-6279-0862)으로 다이렉트 예약을 꽂는 게 술값 아끼고 대만족하는 인생 치트키다.</p>
+    </section>
+</div>
+
+<footer>
+    <p>상호: 공덕 힐링 마스터즈 | 대표자: 공덕큰손</p>
+    <p>문의 직통 전화: <strong>010-6279-0862</strong> (부재 시 문자 필수)</p>
+    <p>&copy; 2026 Gongdeok Orchid. All Rights Reserved. 본 사이트는 성인 전용 정보 포털입니다.</p>
+</footer>
+
 </body>
 </html>
